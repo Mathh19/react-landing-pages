@@ -9,5 +9,9 @@ export const Container = styled.footer`
       text-decoration: none;
       font-size: ${theme.font.sizes.small};
     }
+
+    .heart {
+      color ${theme.colors.secondaryColor}
+    }
   `}
 `;
