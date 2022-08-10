@@ -6,9 +6,8 @@ export const Container = styled.a`
     align-items: center;
     text-decoration: none;
     color: inherit;
-    height: 10rem;
 
-    img {
+    > img {
       max-height: 3rem;
 
     }
