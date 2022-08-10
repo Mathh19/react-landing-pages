@@ -19,10 +19,9 @@ exports[`<LogoLink /> should match snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
-  height: 10rem;
 }
 
-.c1 img {
+.c1 > img {
   max-height: 3rem;
 }
 

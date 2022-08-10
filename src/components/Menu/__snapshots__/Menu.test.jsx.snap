@@ -5,6 +5,7 @@ exports[`<Menu /> should not render links 1`] = `
   max-width: 120rem;
   margin: 0 auto;
   padding: 3.2rem;
+  width: 100%;
 }
 
 .c7 {
@@ -25,10 +26,9 @@ exports[`<Menu /> should not render links 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
-  height: 10rem;
 }
 
-.c8 img {
+.c8 > img {
   max-height: 3rem;
 }
 
@@ -51,7 +51,8 @@ exports[`<Menu /> should not render links 1`] = `
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: #DDDDDD;
+  width: 100%;
+  border-bottom: 0.1rem solid #DDDDDD;
   background-color: #fff;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -232,6 +233,7 @@ exports[`<Menu /> should render Logo and Main Menu Nav 1`] = `
   max-width: 120rem;
   margin: 0 auto;
   padding: 3.2rem;
+  width: 100%;
 }
 
 .c7 {
@@ -252,10 +254,9 @@ exports[`<Menu /> should render Logo and Main Menu Nav 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
-  height: 10rem;
 }
 
-.c8 img {
+.c8 > img {
   max-height: 3rem;
 }
 
@@ -305,7 +306,8 @@ exports[`<Menu /> should render Logo and Main Menu Nav 1`] = `
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: #DDDDDD;
+  width: 100%;
+  border-bottom: 0.1rem solid #DDDDDD;
   background-color: #fff;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
