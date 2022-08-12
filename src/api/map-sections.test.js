@@ -1,4 +1,8 @@
-import { mapSections, mapSectionTwoColumns } from './map-sections';
+import {
+  mapSectionContent,
+  mapSections,
+  mapSectionTwoColumns,
+} from './map-sections';
 
 describe('map-sections', () => {
   test('should render predefined section if no data', () => {
@@ -39,5 +43,32 @@ describe('map-sections', () => {
     expect(data.srcImg).toBe('a.svg');
     expect(data.text).toBe('abc');
     expect(data.title).toBe('title');
+  });
+
+  test('should map section content without data', () => {
+    const data = mapSectionContent();
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('');
+    expect(data.sectionId).toBe('');
+    expect(data.title).toBe('');
+    expect(data.html).toBe('');
+  });
+
+  test('should map section content with data', () => {
+    const data = mapSectionContent({
+      __component: 'section.section-content',
+      title: 'Pricing',
+      content: 'abc',
+      metadata: {
+        background: false,
+        section_id: 'pricing',
+      },
+    });
+
+    expect(data.component).toBe('section.section-content');
+    expect(data.title).toBe('Pricing');
+    expect(data.background).toBe(false);
+    expect(data.sectionId).toBe('pricing');
+    expect(data.html).toBe('abc');
   });
 });
