@@ -2,6 +2,7 @@ import {
   mapSectionContent,
   mapSections,
   mapSectionTwoColumns,
+  mapTextGrid,
 } from './map-sections';
 
 describe('map-sections', () => {
@@ -70,5 +71,45 @@ describe('map-sections', () => {
     expect(data.background).toBe(false);
     expect(data.sectionId).toBe('pricing');
     expect(data.html).toBe('abc');
+  });
+
+  test('should map grid text with data', () => {
+    const data = mapTextGrid({
+      __component: 'section.section-grid',
+      description: 'abc',
+      title: 'My Grid',
+      text_grid: [
+        {
+          title: 'Teste 1',
+          description: 'Teste',
+        },
+        {
+          title: 'Teste 2',
+          description: 'abc',
+        },
+      ],
+      image_grid: [],
+      metadata: {
+        background: true,
+        section_id: 'grid-one',
+      },
+    });
+
+    expect(data.component).toBe('section.section-grid');
+    expect(data.title).toBe('My Grid');
+    expect(data.background).toBe(true);
+    expect(data.sectionId).toBe('grid-one');
+    expect(data.description).toBe('abc');
+    expect(data.grid[0].title).toBe('Teste 1');
+    expect(data.grid[0].description).toBe('Teste');
+  });
+
+  test('should map grid text without data', () => {
+    const data = mapTextGrid();
+    expect(data.component).toBe('');
+    expect(data.title).toBe('');
+    expect(data.background).toBe(false);
+    expect(data.sectionId).toBe('');
+    expect(data.description).toBe('');
   });
 });
