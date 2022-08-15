@@ -15,5 +15,6 @@ export const Container = styled.a`
     z-index: 6;
     opacity: 0.7;
     border-radius: 50%;
+    border: 0.1rem solid #fff;
   `}
 `;
