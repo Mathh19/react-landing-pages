@@ -43,13 +43,13 @@ exports[`<Footer /> should render 1`] = `
     <div
       class="c1 c2"
     >
-      <div
+      <p
         class="c3 c4"
       >
         <h1>
           Test
         </h1>
-      </div>
+      </p>
     </div>
   </footer>
 </div>
