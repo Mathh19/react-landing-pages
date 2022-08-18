@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { mapData } from '../../api/map-data';
 import { GridContent } from '../../components/GridContent';
@@ -12,13 +13,17 @@ import { PageNotFound } from '../PageNotFound';
 
 function Home() {
   const [data, setData] = useState([]);
+  const location = useLocation();
   const isMounted = useRef(true);
 
   useEffect(() => {
+    const pathname = location.pathname.replace(/[^a-z0-9-_]/gi, '');
+    const slug = pathname ? pathname : 'landing-page';
+
     const load = async () => {
       try {
         const data = await fetch(
-          'http://localhost:1337/api/pages/?filters[slug]=landing-page&populate[menu][populate]=*&populate[sections][populate]=*',
+          `http://localhost:1337/api/pages/?filters[slug]=${slug}&populate[menu][populate]=*&populate[sections][populate]=*`,
         );
         const json = await data.json();
         const { attributes } = json.data[0];
@@ -36,7 +41,7 @@ function Home() {
     return () => {
       isMounted.current = false;
     };
-  }, []);
+  }, [location]);
 
   if (data === undefined) {
     return <PageNotFound />;
